@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import lombok.Data;
 
 @Data
@@ -20,13 +23,14 @@ public class Login {
 	@Column(name = "USER_PASSWORD", nullable = false)
 	private String userPassword;
 
-	// Java의 날짜 타입
+	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "INSERT_TIME")
+	@Column(name = "INSERT_TIME", updatable = false)
 	private Date insertTime;
 
+	@UpdateTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME")
+	@Column(name = "UPDATE_TIME", updatable = true)
 	private Date updateTime;
 
 }
