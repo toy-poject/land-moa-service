@@ -20,7 +20,7 @@ spring:
         on-profile: dev
    datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/land_moa?serverTimezone=UTC&characterEncoding=UTF-8
+      url: jdbc:mysql://jinbro.iptime.org:3306/land_moa?serverTimezone=UTC&characterEncoding=UTF-8
       username: "app_user"
       password: "@ppuser1234"
    jpa:

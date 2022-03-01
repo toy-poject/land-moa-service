@@ -1,8 +1,8 @@
 package com.land.moa.login.service;
 
-import com.land.moa.login.dtos.LoginDTO;
-import com.land.moa.login.model.domain.Login;
+import com.land.moa.login.dtos.LoginReq;
+import com.land.moa.login.dtos.LoginRes;
 
 public interface LoginService {
-	public Login chkLogin(LoginDTO login);
+	public LoginRes chkLogin(LoginReq login);
 }

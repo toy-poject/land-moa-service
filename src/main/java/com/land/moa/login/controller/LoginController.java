@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.land.moa.login.dtos.LoginDTO;
+import com.land.moa.login.dtos.LoginReq;
 import com.land.moa.login.model.domain.Login;
 import com.land.moa.login.service.LoginService;
 
@@ -22,7 +22,7 @@ public class LoginController {
 
 	@GetMapping("/login")
 	public ResponseEntity<Login> partyLoginInfo(@RequestParam("id") String id, @RequestParam("pw") String password) {
-		LoginDTO login = new LoginDTO();
+		LoginReq login = new LoginReq();
 		login.setUserId(id);
 		login.setUserPassword(password);
 		return new ResponseEntity(loginService.chkLogin(login), HttpStatus.OK);
